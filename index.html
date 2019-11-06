@@ -26,17 +26,23 @@
       </div>
 
       <div class="scoreboardBox jumbotron">
-        <h2>Total Score: <span id="player1Score"></span><span id="player2Score"></span></h2>
+        <h2>Total Score:
+          <span class="player1Name"></span>
+          <span id="player1Score"></span>
+          <span class="player2Name"></span>
+          <span id="player2Score"></span>
+        </h2>
       </div>
 
       <div class="userInputBox">
-        <h3><span class="playerName"></span></h3>
+        <h3><span class="currentPlayer"></span></h3>
         <button type="button" id="rollBtn">Roll!</button>
         <button type="button" id="holdBtn">Hold Score</button>
       </div>
 
       <div class="currentScoreBox">
-        <h3><span class="playerName"></span> turn Score: <span id="currentScore"></span></h3>
+        <h3><span class="currentPlayer"></span> turn Score: <span id="currentScore"></span></h3>
+
       </div>
 
       <button type="button" name="button" id="newGameBtn">New Game</button>
