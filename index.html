@@ -10,9 +10,9 @@
   </head>
   <body>
     <div class="container">
-      <div class="jumbotron">
+      <div class="jumbotron" id="top">
         <h1>PIG DICE</h1>
-        <p>Play this game... if you <em>dare</em>!</p>
+        <h4>Play this game... if you <em>dare</em>!</h4>
       </div>
 
       <div class="userRegBox">
@@ -21,7 +21,7 @@
           <input type="text" id="player1Name">
           <label for="player2Name">Player Two: </label>
           <input type="text" id="player2Name">
-          <button type="submit" name="button">Play Dice!</button>
+          <button type="submit" class="btn btn-secondary btn-lg btn-block" name="button">Play Dice!</button>
         </form>
       </div>
 
@@ -36,8 +36,8 @@
 
       <div class="userInputBox">
         <h3><span class="currentPlayer"></span></h3>
-        <button type="button" id="rollBtn">Roll!</button>
-        <button type="button" id="holdBtn">Hold Score</button>
+        <button type="button" class="btn btn-outline-secondary btn-lg" id="rollBtn">Roll!</button>
+        <button type="button" class="btn btn-outline-secondary btn-lg" id="holdBtn">Hold Score</button>
       </div>
 
       <div class="currentScoreBox">

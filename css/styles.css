@@ -1,15 +1,34 @@
 .scoreboardBox {
-  display: none;
+  /* display: none; */
 }
 
 .userInputBox {
-  display: none;
+  /* display: none; */
 }
 
 .currentScoreBox {
-  display: none;
+  /* display: none; */
 }
 
 #newGameBtn {
-  display: none;
+  /* display: none; */
+}
+.jumbotron {
+  border-radius: 25px;
+  background-color: #ffe0de;
+  margin-top: 5%;
+  color: black;
+  text-shadow: none;
+}
+h1 {
+  font-size: 90px;
+}
+#top {
+  text-align: center;
+}
+body {
+  background-image: url("../img/pigcuddle.jpg");
+  background-repeat: repeat;
+  color: white;
+  text-shadow: 2px 2px 2px black;
 }
