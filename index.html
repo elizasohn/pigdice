@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/jquery-3.4.1.js" charset="utf-8"></script>
+    <script src="js/scripts.js" charset="utf-8"></script>
+    <meta charset="utf-8">
+    <title>Pig Dice</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="jumbotron">
+        <h1>PIG DICE</h1>
+        <p>Play this game... if you <em>dare</em>!</p>
+      </div>
+
+      <div class="userRegBox">
+        <form id="userRegForm">
+          <label for="player1Name">Player One: </label>
+          <input type="text" id="player1Name">
+          <label for="player2Name">Player Two: </label>
+          <input type="text" id="player2Name">
+          <button type="submit" name="button">Play Dice!</button>
+        </form>
+      </div>
+
+      <div class="scoreboardBox jumbotron">
+        <h2>Total Score: <span id="player1Score"></span><span id="player2Score"></span></h2>
+      </div>
+
+      <div class="userInputBox">
+        <h3><span class="playerName"></span></h3>
+        <button type="button" id="rollBtn">Roll!</button>
+        <button type="button" id="holdBtn">Hold Score</button>
+      </div>
+
+      <div class="currentScoreBox">
+        <h3><span class="playerName"></span> turn Score: <span id="currentScore"></span></h3>
+      </div>
+
+      <button type="button" name="button" id="newGameBtn">New Game</button>
+
+
+  </div> <!-- close container -->
+  </body>
+</html>

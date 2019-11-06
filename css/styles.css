@@ -1,0 +1,15 @@
+.scoreboardBox {
+  display: none;
+}
+
+.userInputBox {
+  display: none;
+}
+
+.currentScoreBox {
+  display: none;
+}
+
+#newGameBtn {
+  display: none;
+}
