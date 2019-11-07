@@ -1,23 +1,27 @@
 //Initialize Variables --------------
 // var newPlayer = new Player("Jimmitohy", 0, 0);
 // var newPlayer2 = new Player("Eliza", 0, 0);
-var playerA;
-var playerB;
-
-var diceValue = 0;
-var turnScore = 0;
-var isOne = false;
-var hold = false;
+var player1;
+var player2;
 
 //Player Logic ----------------------
-function Player(name, totalScore) {
+function Player(id, name, totalScore, hold, isOne, turnScore) {
+  this.id = id;
   this.name = name;
   this.totalScore = totalScore;
+  this.hold = hold;
+  this.isOne = isOne;
+  this.turnScore = turnScore;
 }
 
 Player.prototype.addTotalScore = function(value) {
   this.totalScore += value;
 }
+
+Player.prototype.addTurnScore = function(rollValue) {
+  this.turnScore += rollValue
+}
+
 
 //Dice Logic ------------------------
 function diceRoll() {
@@ -25,8 +29,7 @@ function diceRoll() {
 }
 
 //Player Turn Logic -----------------
-function playerTurn() {
-  var diceValue = diceRoll();
+function playerTurn(diceValue) {
   console.log("You rolled: ", diceValue);
   if (diceValue === 1) {
     turnScore = 0;
@@ -39,37 +42,29 @@ function playerTurn() {
 }
 
 
-
-
 // Game Loop Logic ------------------
 function playGame(player1, player2) {
   var player1Turn = true;
 
   //Checks to see if a player has 100
-  while ((player1.totalScore < 100) && (player2.totalScore < 100)) {
-    //Checks to see if it's player 1's turn
-    while (player1Turn === true){
-      if (hold === true) {
-        player1.addTotalScore(playerTurn(player1));
+    if ((player1Turn === true) && (hold === true)){
+        player1.addTotalScore(playerTurn());
         player1Turn = false;
+        hold = false;
         console.log("player1: ", player1.totalScore);
-      } else if (isOne === true) {
-        turnScore = 0;
-        player1Turn = false;
-        console.log("player1 no points for you: ", player1.totalScore);
-      }
-    }
-    if (hold === true) {
-      player1.addTotalScore(playerTurn(player1));
-      player1Turn = true;
-      console.log("player1: ", player1.totalScore);
     } else if (isOne === true) {
       turnScore = 0;
-      player1Turn = true;
+      player1Turn != player1Turn;
       console.log("player1 no points for you: ", player1.totalScore);
     }
-
-  } //Close While Loop
+    //Player 2's Turn:
+     else if ((player1Turn === false) && (hold === true)) {
+       player2.addTotalScore(playerTurn());
+       player1Turn = true;
+       hold = false;
+       console.log("player2: ", player2.totalScore);
+    }
+  // }
 
     console.log("game over!")
     return;
@@ -78,24 +73,41 @@ function playGame(player1, player2) {
 
 
 $(document).ready(function(){
-  // $("form#userRegForm").submit(function(event){
-    // event.preventDefault();
 
     $("#enterUser").click(function(){
       var player1nameInput = $("#player1").val();
       var player2nameInput = $("#player2").val();
-      playerA = new Player(player1nameInput, 0);
-      playerB = new Player(player2nameInput, 0);
+      player1 = new Player(1, player1nameInput, 0, false, false, 0);
+      player2 = new Player(2, player2nameInput, 0, false, false, 0);
+      $(".userRegBox").slideUp();
     });
 
-    playGame(playerA, playerB);
+//THIS IS THE PLAN!!! Show and Hide different UserInputBox divs to get unique inputs for the player objects!!
+//Get it to count into the object with roll button and add that to player objects
+//Worry about hitting 1's later
+
+    $(".rollBtn").click(function(){
+      console.log("click");
+      // var rollResult = diceRoll();
+      // console.log(rollResult);
+      // var id = this.id;
+      // console.log(id);
+      // if (id === 1){
+      //   player1.addTurnScore(playerTurn(rollResult));
+      // } else {
+      //   player2.addTurnScore(playerTurn(rollResult));
+    });
+
+
+
+    });
+
     //
     // $(".player1Name").text(player1nameInput);
     // $(".player2Name").text(player2nameInput);
     //
     // $(".currentPlayer").text(player1nameInput);
 
-  });
 
 
 //
