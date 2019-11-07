@@ -5,13 +5,11 @@ var player1;
 var player2;
 
 //Player Logic ----------------------
-function Player(id, name, totalScore, hold, isOne, turnScore) {
+function Player(id, name, totalScore, tempScore) {
   this.id = id;
   this.name = name;
   this.totalScore = totalScore;
-  this.hold = hold;
-  this.isOne = isOne;
-  this.turnScore = turnScore;
+  this.tempScore = tempScore;
 }
 
 Player.prototype.addTotalScore = function(value) {
@@ -19,7 +17,7 @@ Player.prototype.addTotalScore = function(value) {
 }
 
 Player.prototype.addTurnScore = function(rollValue) {
-  this.turnScore += rollValue
+  this.tempScore += rollValue
 }
 
 
@@ -32,13 +30,13 @@ function diceRoll() {
 function playerTurn(diceValue) {
   console.log("You rolled: ", diceValue);
   if (diceValue === 1) {
-    turnScore = 0;
+    tempScore = 0;
     isOne = true;
 
   } else if (diceValue > 1) {
-    turnScore += diceValue;
+    tempScore += diceValue;
   }
-  return turnScore;
+  return tempScore;
 }
 
 
@@ -53,7 +51,7 @@ function playGame(player1, player2) {
         hold = false;
         console.log("player1: ", player1.totalScore);
     } else if (isOne === true) {
-      turnScore = 0;
+      tempScore = 0;
       player1Turn != player1Turn;
       console.log("player1 no points for you: ", player1.totalScore);
     }
