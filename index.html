@@ -19,34 +19,57 @@
         <form id="userRegForm">
           <label for="player1Name">Player One: </label>
           <input type="text" id="player1">
+          <br>
           <label for="player2Name">Player Two: </label>
           <input type="text" id="player2">
           <button type="button" id="enterUser" class="btn btn-secondary btn-lg btn-block" name="button">Play Dice!</button>
         </form>
       </div>
 
-      <div class="scoreboardBox jumbotron">
-        <h2>Total Score:
-          <span class="player1Name"></span>
-          <span class="player1Score"></span>
-          <span class="player2Name"></span>
-          <span class="player2Score"></span>
-        </h2>
+      <div class="gameField">
+
+          <div class="scoreboardBox jumbotron">
+
+          <div class="row" id="scoreboardTitle">
+            <h2>SCOREBOARD</h2>
+            <h2><span class="currentPlayer"></span>'s Turn</h2>
+        </div>
+
+
+        <div class="row">
+          <div class="col-md-5">
+            <h3 class="totalScoreNames">
+              <span class="player1Name"></span>:
+              <span class="player1Score"></span>
+              <br>
+            </h3>
+            <h3 class="totalScoreNames">
+              <span class="player2Name"></span>:
+              <span class="player2Score"></span>
+            </h3>
+          </div>
+          <div class="col-md-2">
+
+          </div>
+
+          <div class="col-md-5">
+            <div class="currentScoreBox">
+              <h3>Score This Round: <span id="currentTempScore"></span></h3>
+              <div class="userInputBox">
+
+                <button type="button" class="btn btn-outline-secondary btn-lg rollBtn" id="rollBtn">Roll!</button>
+                <button type="button" class="btn btn-outline-secondary btn-lg holdBtn" id="holdBtn">Hold Score</button>
+              </div>
+            </div>
+          </div>
       </div>
 
-      <div class="user1InputBox">
-        <h3><span class="currentPlayer"></span>'s Turn</h3>
-        <button type="button" class="btn btn-outline-secondary btn-lg rollBtn" id="rollBtn">Roll!</button>
-        <button type="button" class="btn btn-outline-secondary btn-lg holdBtn" id="holdBtn">Hold Score</button>
       </div>
 
-      <div class="currentScoreBox">
-        <h3><span class="currentPlayer"></span>'s Turn Score: <span id="currentTempScore"></span></h3>
-
-      </div>
-
-      <button type="button" name="button" id="newGameBtn">New Game</button>
-
+        <div class="winningResult">
+          <h1><span class="currentPlayer"></span>YOU WON!!!!!!!!!!!!</h1>
+          <button type="button" id="newGameBtn" class="btn btn-outline-secondary btn-lg">New Game</button>
+        </div>
 
   </div> <!-- close container -->
   </body>

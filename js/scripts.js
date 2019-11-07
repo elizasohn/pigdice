@@ -78,6 +78,8 @@ $(document).ready(function(){
     player2 = new Player(2, player2nameInput, false);
     $(".userRegBox").slideUp();
     updateScreens();
+    $(".gameField").show();
+
   });
 
 
@@ -94,13 +96,13 @@ $(document).ready(function(){
   $("#holdBtn").click(function(){
     if (turnCheck() === true){
       hold(player1);
-      if (player1.totalScore > 100){
+      if (player1.totalScore >= 100){
         winGame(player1);
       }
     } else if (turnCheck() === false){
       hold(player2);
-      if (player1.totalScore > 100){
-        winGame(player1);
+      if (player1.totalScore >= 100){
+        winGame(player2);
       }
     }
     updateScreens();
@@ -120,7 +122,13 @@ $(document).ready(function(){
     }
   }
 
-  function winGame(){
+  function winGame(player){
+    $(".currentPlayer").text(player.name);
+    $(".gameField").hide();
+    $(".winningResult").show();
   }
 
+  $("#newGameBtn").click(function(){
+    window.location.reload();
+  })
 });

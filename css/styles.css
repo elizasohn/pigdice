@@ -1,21 +1,13 @@
-.scoreboardBox {
-  /* display: none; */
+.gameField{
+  display: none;
 }
-
-.userInputBox {
-  /* display: none; */
+.winningResult{
+  display: none;
 }
-
-.currentScoreBox {
-  /* display: none; */
-}
-
-#newGameBtn {
-  /* display: none; */
-}
+/* #ffe0de */
 .jumbotron {
   border-radius: 25px;
-  background-color: #ffe0de;
+  background-color: rgba(255, 224, 222, .8);
   margin-top: 5%;
   color: black;
   text-shadow: none;
@@ -23,12 +15,60 @@
 h1 {
   font-size: 90px;
 }
+h2 {
+  width: 100%;
+  margin-top: 3%;
+  font-size: 40px;
+}
 #top {
   text-align: center;
+  margin-left: 20%;
+  margin-right: 20%;
 }
+
 body {
   background-image: url("../img/pigcuddle.jpg");
   background-repeat: repeat;
   color: white;
   text-shadow: 2px 2px 2px black;
+}
+button {
+  margin-top:2%;
+}
+input {
+  margin-bottom: 2%;
+}
+#enterUser {
+  font-size: 32px;
+}
+label {
+  font-size: 24px;
+  text-align: center;
+}
+#userRegForm {
+  text-align: center;
+}
+#scoreboardTitle {
+  text-align: center;
+}
+.scoreboardBox {
+  padding-top:2%;
+  padding-bottom:5%;
+}
+
+.scoreboardBox h3 {
+  margin-bottom: 5%;
+  margin-top: 5%;
+  text-align: right;
+}
+.currentScoreBox h3 {
+  margin-left: 0;
+  text-align: left;
+
+}
+.player1Score, .player2Score{
+  font-size: 60px;
+}
+#currentTempScore {
+  font-size: 60px;
 }
