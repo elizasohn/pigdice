@@ -101,7 +101,7 @@ $(document).ready(function(){
       }
     } else if (turnCheck() === false){
       hold(player2);
-      if (player1.totalScore >= 100){
+      if (player2.totalScore >= 100){
         winGame(player2);
       }
     }
@@ -123,7 +123,7 @@ $(document).ready(function(){
   }
 
   function winGame(player){
-    $(".currentPlayer").text(player.name);
+    $(".winningPlayer").text(player.name);
     $(".gameField").hide();
     $(".winningResult").show();
   }
